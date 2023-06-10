@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: "2010-09-09"
-Description: aws-sam-typescript-layers-example
+Description: sam-ts-layers-example
 Transform: AWS::Serverless-2016-10-31
 
 Globals:
@@ -18,5 +18,11 @@ Resources:
     Metadata:
       BuildMethod: makefile
     Properties:
-      Handler: dist/f1/handler
+      Handler: dist/f1/lambda.handler
 
+  Function2:
+    Type: AWS::Serverless::Function
+    Metadata:
+      BuildMethod: makefile
+    Properties:
+      Handler: dist/f2/lambda.handler

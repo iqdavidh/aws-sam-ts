@@ -1,14 +1,15 @@
 #.PHONY: build-layer build-lambda-common
-.PHONY: build-Function1
+.PHONY: build-Function1 build-Function1 build-Function2
 
 build-Function1:
-	$(MAKE) HANDLER=src/f1/lambda.ts build-lambda-common
-
+	$(MAKE) FDIR=src/f1/*.* build-lambda-common
+build-Function2:
+	$(MAKE) FDIR=src/f2/*.* build-lambda-common
 
 build-lambda-common:
 	npm install
 	rm -rf dist
-	echo "{\"extends\": \"./tsconfig.json\", \"include\": [\"${HANDLER}\"] }" > tsconfig-only-handler.json
+	echo "{\"extends\": \"./tsconfig.json\", \"include\": [\"${FDIR}\"] }" > tsconfig-only-handler.json
 	npm run build -- --build tsconfig-only-handler.json
 	cp -r dist "$(ARTIFACTS_DIR)/"
 
