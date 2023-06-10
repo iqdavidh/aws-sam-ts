@@ -1,13 +1,12 @@
-
 import NumberFactory from "./NumberFactory";
-import TextFactory from "../lib/TextFactory";
+import UIDFactory from "../lib/UIDFactory";
 
 
-exports.handler = async (event:any): Promise<any> => {
+exports.handler = async (event: any): Promise<any> => {
 
   const response = {
     statusCode: 200,
-    message:"function2 - number " + NumberFactory().toString() + " - text " + TextFactory()
+    message: "function2 - number " + NumberFactory().toString() + " - text " + UIDFactory()
   };
 
   return response;

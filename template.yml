@@ -4,14 +4,24 @@ Transform: AWS::Serverless-2016-10-31
 
 Globals:
   Function:
-    #Layers:
-    #  - !Ref RuntimeDependenciesLayer
+    Layers:
+      - !Ref FunctionDependenciesLayer
     Runtime: nodejs18.x
     MemorySize: 128
     Timeout: 10
 
 
 Resources:
+
+  FunctionDependenciesLayer:
+    Type: AWS::Serverless::LayerVersion
+    Metadata:
+      BuildMethod: makefile
+    Properties:
+      ContentUri: ./
+      CompatibleRuntimes:
+        - nodejs18.x
+      RetentionPolicy: Delete
 
   Function1:
     Type: AWS::Serverless::Function
