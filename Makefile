@@ -19,4 +19,5 @@ build-lambda-common:
 	echo "{\"extends\": \"./tsconfig.json\", \"include\": [\"${FDIR}\"] }" > tsconfig-only-handler.json
 	npm run build -- --build tsconfig-only-handler.json
 	cp -r dist "$(ARTIFACTS_DIR)/"
+	echo "{\"name\": \"lambda\",\"type\": \"module\"}" > "$(ARTIFACTS_DIR)/package.json"
 

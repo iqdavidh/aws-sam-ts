@@ -5,11 +5,12 @@
     "allowJs": true,
     "checkJs": true,
     "moduleResolution": "node",
-    "module": "commonjs",
+    "module": "es2015",
     "lib": ["es2020"],
-    "target": "es2019",
+    "target": "es2020",
     "outDir": "./dist",
     "rootDir": "./src"
   },
-  "include": ["src/**/*.ts", "src/**/*.js"]
+  "include": ["src/**/*"],
+  "exclude": ["**/*.spec.ts","node_modules"]
 }
