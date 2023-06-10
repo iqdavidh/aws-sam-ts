@@ -1,7 +1,6 @@
 import {v4 as uuidv4} from 'uuid';
 
-const UIDFactory = (): string => {
+export const uidFactory = (): string => {
   return uuidv4();
 }
 
-export = UIDFactory;

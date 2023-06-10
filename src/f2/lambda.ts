@@ -1,12 +1,13 @@
-import NumberFactory from "./NumberFactory";
-import UIDFactory from "../lib/UIDFactory";
+import { Handler } from 'aws-lambda';
+import {numberFactory} from "./numberFactory";
+import {uidFactory} from "../lib/uidFactory";
 
 
-exports.handler = async (event: any): Promise<any> => {
+export const handler:Handler = async (event: any): Promise<any> => {
 
   const response = {
     statusCode: 200,
-    message: "function2 - number " + NumberFactory().toString() + " - text " + UIDFactory()
+    message: "function2 - number " + numberFactory().toString() + " - text " + uidFactory()
   };
 
   return response;
