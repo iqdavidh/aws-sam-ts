@@ -23,3 +23,6 @@ we have all the dependencies required for lambda and the tests. The prod depende
 
 7. The lambda layer will have only the production dependencies.
 
+   
+
+This project is based on the project https://github.com/Envek/aws-sam-typescript-layers-example
