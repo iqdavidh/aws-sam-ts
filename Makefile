@@ -1,4 +1,4 @@
-.PHONY: build-FunctionDependenciesLayer build-lambda-common
+.PHONY: build-FunctionDependenciesLayer
 .PHONY: build-Function1  build-Function2
 
 build-FunctionDependenciesLayer:
