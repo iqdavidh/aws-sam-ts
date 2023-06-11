@@ -1,5 +1,5 @@
 .PHONY: build-FunctionDependenciesLayer build-lambda-common
-.PHONY: build-Function1 build-Function1 build-Function2
+.PHONY: build-Function1  build-Function2
 
 build-FunctionDependenciesLayer:
 	mkdir -p "$(ARTIFACTS_DIR)/nodejs"
