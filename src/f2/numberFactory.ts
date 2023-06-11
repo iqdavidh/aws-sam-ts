@@ -1,4 +1,4 @@
 export const numberFactory = (): number => {
-  return 5.34
+  return 8.22
 };
 

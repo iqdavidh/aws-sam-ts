@@ -1,6 +1,6 @@
 import { Handler } from 'aws-lambda';
-import {numberFactory} from "./numberFactory";
-import {uidFactory} from "../lib/uidFactory";
+import {numberFactory} from "./numberFactory.js";
+import {uidFactory} from "../lib/uidFactory.js";
 
 
 export const handler:Handler = async (event: any): Promise<any> => {
