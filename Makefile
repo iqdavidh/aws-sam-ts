@@ -14,7 +14,6 @@ build-Function2:
 	$(MAKE) FDIR=src/f2/*.* build-lambda-common
 
 build-lambda-common:
-	npm install
 	rm -rf dist
 	echo "{\"extends\": \"./tsconfig.json\", \"include\": [\"${FDIR}\"] }" > tsconfig-only-handler.json
 	npm run build -- --build tsconfig-only-handler.json
