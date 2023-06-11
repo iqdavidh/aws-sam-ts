@@ -8,4 +8,5 @@ module.exports = {
     "<rootDir>/__tests__/global-setup.js",
   ],
   clearMocks: true,
+  "resolver": "jest-ts-webcompat-resolver"
 };
