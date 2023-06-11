@@ -8,10 +8,6 @@ build-FunctionDependenciesLayer:
 	rm "$(ARTIFACTS_DIR)/nodejs/package.json" # to avoid rebuilding when changes doesn't relate to dependencies
 
 
-build-Function1:
-	$(MAKE) FDIR=src/f1/*.* build-lambda-common
-build-Function2:
-	$(MAKE) FDIR=src/f2/*.* build-lambda-common
 
 build-lambda-common:
 	rm -rf dist
@@ -19,4 +15,10 @@ build-lambda-common:
 	npm run build -- --build tsconfig-only-handler.json
 	cp -r dist "$(ARTIFACTS_DIR)/"
 	echo "{\"name\": \"lambda\",\"type\": \"module\"}" > "$(ARTIFACTS_DIR)/package.json"
+
+build-Function1:
+	$(MAKE) FDIR=src/f1/*.* build-lambda-common
+build-Function2:
+	$(MAKE) FDIR=src/f2/*.* build-lambda-common
+
 
